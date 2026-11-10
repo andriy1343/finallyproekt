@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #FFFFFFB2;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    animation: headerAppear 0.8s ease-out both;
+}
+
+.header_container {
+    width: 100%;
+    max-width: 1105px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+/* LOGO */
+
+.header_container--title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1.2px;
+    color: #420D1F;
+
+    animation: logoAppear 0.8s ease-out 0.3s both;
+    transition: color 0.3s ease;
+}
+
+.header_container--title:hover {
+    color: #8D4A00;
+}
+
+/* NAVIGATION */
+
+.header_container--nav {
+    width: 100%;
+    max-width: 355px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_container--nav--link {
+    position: relative;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.35px;
+    text-transform: uppercase;
+
+    color: #5A5C5C;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+
+    opacity: 0;
+    animation: linkAppear 0.6s ease forwards;
+}
+
+/* Поява посилань по черзі */
+
+.header_container--nav--link:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.header_container--nav--link:nth-child(2) {
+    animation-delay: 0.55s;
+}
+
+.header_container--nav--link:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.header_container--nav--link:nth-child(4) {
+    animation-delay: 0.85s;
+}
+
+/* Лінія під посиланнями */
+
+.header_container--nav--link::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: #8D4A00;
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: transform 0.35s ease;
+}
+
+.header_container--nav--link:hover {
+    color: #8D4A00;
+}
+
+.header_container--nav--link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* BUTTON */
+
+.header_container--btn {
+    position: relative;
+    overflow: hidden;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    text-align: center;
+    text-transform: uppercase;
+
+    background-color: #8D4A00;
+    border-radius: 50px;
+    padding: 12px 32px;
+
+    color: #FFF0E7;
+    border: none;
+
+    box-shadow:
+        0px 4px 6px -4px #8D4A001A,
+        0px 10px 15px -3px #8D4A001A;
+
+    cursor: pointer;
+
+    opacity: 0;
+    animation: buttonAppear 0.7s ease 1s forwards;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Ефект блиску на кнопці */
+
+.header_container--btn::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        #ffffff66,
+        transparent
+    );
+
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+}
+
+.header_container--btn:hover::before {
+    left: 150%;
+}
+
+.header_container--btn:hover {
+    background-color: #713A00;
+    transform: translateY(-4px);
+
+    box-shadow:
+        0px 8px 15px #8D4A0033,
+        0px 12px 25px #8D4A0022;
+}
+
+.header_container--btn:active {
+    transform: translateY(-1px) scale(0.97);
+}
+
+/* ANIMATIONS */
+
+@keyframes headerAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes linkAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: translateX(25px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
