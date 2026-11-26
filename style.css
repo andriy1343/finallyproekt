@@ -1,21 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 
 * {
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #F6F6F6
+    background-color: #F6F6F6;
 }
 
 .header {
     background-color: #FFFFFFB2;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-
+    position: sticky;
+    top: 0;
+    z-index: 100;
     animation: headerAppear 0.8s ease-out both;
 }
 
@@ -23,16 +28,12 @@ body {
     width: 100%;
     max-width: 1105px;
     margin: 0 auto;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding-top: 24px;
     padding-bottom: 24px;
 }
-
-
 
 .header_container--title {
     font-family: 'Space Grotesk', sans-serif;
@@ -40,8 +41,7 @@ body {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: -1.2px;
-    color: #420D1F;
-
+    color: #2D2F2F;
     animation: logoAppear 0.8s ease-out 0.3s both;
     transition: color 0.3s ease;
 }
@@ -50,69 +50,43 @@ body {
     color: #8D4A00;
 }
 
-
-
 .header_container--nav {
     width: 100%;
     max-width: 355px;
-
     display: flex;
     justify-content: space-between;
 }
 
 .header_container--nav--link {
     position: relative;
-
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.35px;
     text-transform: uppercase;
-
     color: #5A5C5C;
     text-decoration: none;
-
     transition: color 0.3s ease;
-
     opacity: 0;
     animation: linkAppear 0.6s ease forwards;
 }
 
-
-.header_container--nav--link:nth-child(1) {
-    animation-delay: 0.4s;
-}
-
-.header_container--nav--link:nth-child(2) {
-    animation-delay: 0.55s;
-}
-
-.header_container--nav--link:nth-child(3) {
-    animation-delay: 0.7s;
-}
-
-.header_container--nav--link:nth-child(4) {
-    animation-delay: 0.85s;
-}
-
-
+.header_container--nav--link:nth-child(1) { animation-delay: 0.4s; }
+.header_container--nav--link:nth-child(2) { animation-delay: 0.55s; }
+.header_container--nav--link:nth-child(3) { animation-delay: 0.7s; }
+.header_container--nav--link:nth-child(4) { animation-delay: 0.85s; }
 
 .header_container--nav--link::after {
     content: "";
     position: absolute;
-
     left: 0;
     bottom: -5px;
-
     width: 100%;
     height: 1px;
-
     background-color: #8D4A00;
-
     transform: scaleX(0);
     transform-origin: right;
-
     transition: transform 0.35s ease;
 }
 
@@ -125,11 +99,9 @@ body {
     transform-origin: left;
 }
 
-
 .header_container--btn {
     position: relative;
     overflow: hidden;
-
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 12px;
@@ -137,46 +109,26 @@ body {
     letter-spacing: 1.2px;
     text-align: center;
     text-transform: uppercase;
-
     background-color: #8D4A00;
     border-radius: 50px;
     padding: 12px 32px;
-
     color: #FFF0E7;
     border: none;
-
-    box-shadow:
-        0px 4px 6px -4px #8D4A001A,
-        0px 10px 15px -3px #8D4A001A;
-
+    box-shadow: 0px 4px 6px -4px #8D4A001A, 0px 10px 15px -3px #8D4A001A;
     cursor: pointer;
-
     opacity: 0;
     animation: buttonAppear 0.7s ease 1s forwards;
-
-    transition:
-        transform 0.3s ease,
-        background-color 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 
 .header_container--btn::before {
     content: "";
     position: absolute;
-
     top: 0;
     left: -120%;
-
     width: 70%;
     height: 100%;
-
-    background: linear-gradient(110deg,
-            transparent,
-            #ffffff66,
-            transparent);
-
+    background: linear-gradient(110deg, transparent, #ffffff66, transparent);
     transform: skewX(-25deg);
     transition: left 0.6s ease;
 }
@@ -188,83 +140,15 @@ body {
 .header_container--btn:hover {
     background-color: #713A00;
     transform: translateY(-4px);
-
-    box-shadow:
-        0px 8px 15px #8D4A0033,
-        0px 12px 25px #8D4A0022;
+    box-shadow: 0px 8px 15px #8D4A0033, 0px 12px 25px #8D4A0022;
 }
 
 .header_container--btn:active {
     transform: translateY(-1px) scale(0.97);
 }
 
-
-@keyframes headerAppear {
-    from {
-        opacity: 0;
-        transform: translateY(-25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes logoAppear {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-        filter: blur(5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-        filter: blur(0);
-    }
-}
-
-@keyframes linkAppear {
-    from {
-        opacity: 0;
-        transform: translateY(-15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes buttonAppear {
-    from {
-        opacity: 0;
-        transform: translateX(25px) scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-    }
-}
-
-
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-delay: 0ms !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
 .streetwear {
     background: radial-gradient(61.6% 85.61% at 50% 50%, rgba(253, 211, 77, 0.15) 0%, rgba(253, 211, 77, 0) 70%);
-
 }
 
 .streetwear_container {
@@ -280,37 +164,37 @@ body {
 
 .streetwear_container--info {
     width: 100%;
-    max-width: 6700px;
+    max-width: 670px;
 }
 
 .streetwear_container--info--subtitle {
     background-color: #FDD34D;
     color: #5C4900;
-    font-family: Be Vietnam Pro;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 700;
-    font-style: Semi Bold;
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 1.2px;
-    vertical-align: middle;
     text-transform: uppercase;
     width: 200px;
     border-radius: 9999px;
     text-align: center;
     padding: 6px 16px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease-out 0.3s forwards;
 }
 
 .streetwear_container--info--title--first {
     width: 670px;
     height: 234px;
-    font-family: Space Grotesk;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    font-style: Bold;
     font-size: 120px;
     line-height: 117px;
     letter-spacing: -6.4px;
-    vertical-align: middle;
     color: #2D2F2F;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.45s forwards;
 }
 
 .streetwear_container--info--title--second {
@@ -324,14 +208,14 @@ body {
 .streetwear_container--info--text {
     width: 576px;
     color: #5A5C5C;
-    font-family: Be Vietnam Pro;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 300;
-    font-style: Light;
     font-size: 24px;
     line-height: 32px;
-    letter-spacing: 0px;
-    vertical-align: middle;
-
+    margin-top: 24px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.6s forwards;
 }
 
 .streetwear_container--info--buttons {
@@ -339,44 +223,66 @@ body {
     width: 100%;
     max-width: 670px;
     gap: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.75s forwards;
 }
 
 .streetwear_container--info--buttons--explore {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     border-radius: 9999px;
-    padding-top: 20px;
-    padding-right: 40px;
-    padding-bottom: 20px;
-    padding-left: 40px;
+    padding: 20px 40px;
     background-color: #8D4A00;
     color: #FFF0E7;
     border: none;
     text-align: center;
     cursor: pointer;
     width: 246px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
+.streetwear_container--info--buttons--explore svg {
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.streetwear_container--info--buttons--explore:hover {
+    background-color: #713A00;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(141, 74, 0, 0.25);
+}
+
+.streetwear_container--info--buttons--explore:hover svg {
+    transform: translateX(5px);
 }
 
 .streetwear_container--info--buttons--veil {
     border-radius: 9999px;
-    padding-top: 21px;
-    padding-right: 40px;
-    padding-bottom: 21px;
-    padding-left: 40px;
-    border-width: 1px;
+    padding: 21px 40px;
     background-color: #FFFFFF;
     color: #2D2F2F;
     border: 1px solid #ACADAD33;
     cursor: pointer;
-    font-family: Space Grotesk;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    font-style: Bold;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 1.4px;
     text-align: center;
-    vertical-align: middle;
     text-transform: uppercase;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
+.streetwear_container--info--buttons--veil:hover {
+    transform: translateY(-4px);
+    border-color: #8D4A00;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
 }
 
 .streetwear_container--image {
@@ -384,6 +290,8 @@ body {
     width: 100%;
     max-width: 480px;
     margin: 0 auto;
+    opacity: 0;
+    animation: heroImageAppear 1s ease-out 0.5s forwards;
 }
 
 .streetwear_container--image--first {
@@ -394,6 +302,12 @@ body {
     border-radius: 48px;
     box-shadow: 0 40px 80px -20px rgba(13, 74, 0, 0.06);
     display: block;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.streetwear_container--image:hover .streetwear_container--image--first {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 45px 90px -20px rgba(141, 74, 0, 0.15);
 }
 
 .streetwear_container--image--second {
@@ -405,15 +319,25 @@ body {
     border-radius: 48px;
     transform: rotate(-6deg);
     box-shadow: 0 40px 80px -20px rgba(13, 74, 0, 0.06);
+    animation: floatCard 4s ease-in-out infinite;
+    transition: transform 0.5s ease;
+}
+
+.streetwear_container--image:hover .streetwear_container--image--second {
+    animation-play-state: paused;
+    transform: rotate(-2deg) scale(1.05);
 }
 
 .hit {
     width: 100%;
-    max-width: 1184px;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 128px 48px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 64px;
 }
 
 .hit_container {
@@ -423,42 +347,50 @@ body {
 }
 
 .new_hit_info_title {
-    font-family: Space Grotesk;
-    font-weight: 700px;
-    font-style: Bold;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
     font-size: 60px;
     line-height: 60px;
     letter-spacing: -3px;
-    vertical-align: middle;
     width: 552px;
     height: 120px;
 }
 
-.fashion_info_title {
-    width: 552px;
-    height: 131px;
-    padding-bottom: 4.5px;
-    color: #5A5C5C;
+.text {
+    max-width: 650px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #666;
 }
 
 .highlight {
-    background-color: #FFD15C;
+    color: #222;
+    font-weight: 700;
     padding: 2px 4px;
     border-radius: 4px;
+    background-image: linear-gradient(#ffda55, #ffda55);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 0% 8px;
+    animation: underline 1.5s ease forwards;
 }
 
 .easiest_info_title {
-    font-family: Space Grotesk;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
-    font-style: Medium;
     font-size: 24px;
     color: #2D2F2F;
     line-height: 32px;
-    letter-spacing: 0px;
-    vertical-align: middle;
     border-left: 4px solid #E87223;
     padding-left: 20px;
     margin: 40px 0;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.easiest_info_title:hover {
+    transform: translateX(8px);
+    border-left-color: #8D4A00;
 }
 
 .container_fit {
@@ -480,6 +412,12 @@ body {
     align-items: center;
     gap: 12px;
     margin: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.container_fit p:hover {
+    transform: translateX(8px);
+    color: #8D4A00;
 }
 
 .container_fit p::before {
@@ -489,18 +427,25 @@ body {
     height: 2px;
     background-color: #FFD15C;
     flex-shrink: 0;
+    transition: width 0.3s ease, background-color 0.3s ease;
 }
 
-.hit {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 128px 48px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 64px;
+.container_fit p:hover::before {
+    width: 28px;
+    background-color: #8D4A00;
+}
+
+.hit_image {
+    width: 552px;
+    height: 736px;
+    border-radius: 48px;
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hit_image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
 }
 
 .clothes {
@@ -540,7 +485,6 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 0px;
     color: #5A5C5C;
     max-width: 390px;
     margin: 0;
@@ -559,6 +503,15 @@ body {
     gap: 8px;
     margin: 0;
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.clothes--info--title .svg {
+    transition: transform 0.3s ease;
+}
+
+.clothes--info--title:hover .svg {
+    transform: translateX(6px);
 }
 
 .clothes_gallery {
@@ -580,93 +533,97 @@ body {
     gap: 24px;
 }
 
+.clothes--image,
+.clothes--image--boot,
+.clothes--image--hoodi,
+.clothes--image--laptop {
+    object-fit: cover;
+    border-radius: 48px;
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
 .clothes--image {
     width: 580px;
     height: 800px;
-    object-fit: cover;
-    border-radius: 48px;
 }
 
 .clothes--image--boot {
     width: 580px;
     height: 388px;
-    object-fit: cover;
-    border-radius: 48px;
 }
 
 .clothes--image--hoodi,
 .clothes--image--laptop {
     width: 278px;
     height: 388px;
-    object-fit: cover;
-    border-radius: 48px;
 }
 
-
-
-
-
-
-
-
-
+.clothes--image:hover,
+.clothes--image--boot:hover,
+.clothes--image--hoodi:hover,
+.clothes--image--laptop:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow: 0 25px 50px -12px rgba(141, 74, 0, 0.18);
+}
 
 .evolution {
     width: 100%;
     padding: 128px 48px;
     box-sizing: border-box;
-    background-color: #F6F6F6;
+    background-color: #F9F9F9;
 }
 
 .evolution_container {
-    max-width: 1024px;
+    max-width: 1184px;
     margin: 0 auto;
 }
 
 .evolution_title {
-
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 56px;
     line-height: 1.1;
     letter-spacing: -2px;
     text-align: center;
+    color: #1A1A1A;
     margin: 0 0 16px 0;
 }
 
 .evolution_subtitle {
-    font-family: Be Vietnam Pro;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 400;
-    font-style: Regular;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 0px;
-    text-align: center;
-    vertical-align: middle;
     color: #5A5C5C;
-    max-width: 420px;
-    margin: 0 auto;
     text-align: center;
+    max-width: 440px;
+    margin: 0 auto 56px auto;
 }
-
 
 .evolution_table_wrap {
     width: 100%;
-    max-width: 1024px;
     border-radius: 32px;
     background-color: #FFFFFF;
+    box-shadow: 0 25px 50px -12px rgba(141, 74, 0, 0.05);
 }
 
 .evolution_table {
     width: 100%;
+    border-spacing: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 15px;
     color: #1A1A1A;
 }
 
 .evolution_table thead tr {
-    background-color: #F1F1F1;
+    background-color: #F2F2F2;
 }
 
+.evolution_table th:first-child { border-top-left-radius: 32px; }
+.evolution_table th:last-child { border-top-right-radius: 32px; }
+
 .evolution_table th {
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 12px;
     line-height: 16px;
@@ -677,15 +634,23 @@ body {
     padding: 22px 32px;
 }
 
+.evolution_table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.evolution_table tbody tr:hover {
+    background-color: #FFF8E7;
+}
+
 .evolution_table td {
     padding: 28px 32px;
     border-bottom: 1px solid #EFEFEF;
     vertical-align: middle;
 }
 
-.evolution_table tbody tr:last-child td {
-    border-bottom: none;
-}
+.evolution_table tbody tr:last-child td { border-bottom: none; }
+.evolution_table tbody tr:last-child td:first-child { border-bottom-left-radius: 32px; }
+.evolution_table tbody tr:last-child td:last-child { border-bottom-right-radius: 32px; }
 
 .era_name {
     font-weight: 700;
@@ -705,9 +670,15 @@ body {
     text-transform: uppercase;
     padding: 6px 14px;
     border-radius: 999px;
+    transition: transform 0.3s ease;
 }
 
-.status--archived {
+.evolution_table tbody tr:hover .status {
+    transform: scale(1.06);
+}
+
+.status--archived,
+.status--vaulted {
     background-color: #E5E5E5;
     color: #4A4A4A;
 }
@@ -715,14 +686,471 @@ body {
 .status--trending {
     background-color: #FF8A2B;
     color: #1A1A1A;
-}
-
-.status--vaulted {
-    background-color: #E5E5E5;
-    color: #4A4A4A;
+    animation: pulseBadge 2s infinite;
 }
 
 .status--emerging {
     background-color: #FFD13B;
     color: #1A1A1A;
 }
+
+.movement {
+    width: 100%;
+    padding: 48px;
+    box-sizing: border-box;
+}
+
+.movement_container {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 64px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border: 4px solid #8D4A00;
+    border-radius: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.movement_container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px -15px rgba(141, 74, 0, 0.12);
+}
+
+.movement_left_container {
+    width: 456px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.movement_title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    color: #1A1A1A;
+    margin: 0;
+}
+
+.movement_text {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29.25px;
+    color: #5A5C5C;
+    max-width: 456px;
+    margin: 0;
+}
+
+.movement_members_container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.movement_avatars_container {
+    display: flex;
+    align-items: center;
+}
+
+.movement_avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    border: 2px solid #FE973C;
+    padding: 4px;
+    box-sizing: border-box;
+    object-fit: cover;
+    background-color: #FFFFFF;
+    margin-left: -12px;
+    transition: transform 0.3s ease;
+}
+
+.movement_avatar:first-child {
+    margin-left: 0;
+}
+
+.movement_avatar:hover {
+    transform: translateY(-6px) scale(1.1);
+    z-index: 2;
+}
+
+.movement_count {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #5A5C5C;
+    padding-left: 8px;
+}
+
+.movement_right_container {
+    width: 456px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.movement_label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #5A5C5C;
+}
+
+.movement_input {
+    width: 100%;
+    height: 56px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    border-radius: 9999px;
+    background-color: #F2F2F2;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 15px;
+    color: #1A1A1A;
+    outline: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movement_input:focus {
+    background-color: #FFFFFF;
+    border-color: #8D4A00;
+    box-shadow: 0 0 0 4px rgba(141, 74, 0, 0.1);
+}
+
+.movement_btn {
+    width: 100%;
+    height: 60px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 9999px;
+    background-color: #262626;
+    color: #FFFFFF;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movement_btn:hover {
+    background-color: #8D4A00;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(141, 74, 0, 0.25);
+}
+
+.movement_btn:active {
+    transform: scale(0.98);
+}
+
+.movement_terms {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: center;
+    color: #9E9E9E;
+    max-width: 340px;
+    margin: 4px auto 0 auto;
+}
+
+.footer {
+    width: 100%;
+    background-color: #F2F2F2;
+}
+
+.footer_container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 64px 80px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1.5px;
+    color: #2D2F2F;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer_logo:hover {
+    color: #8D4A00;
+}
+
+.footer_links_container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer_link {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #5A5C5C;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer_link:hover {
+    color: #8D4A00;
+    transform: translateY(-2px);
+}
+
+.footer_copy {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+    color: #9E9E9E;
+    margin: 0;
+}
+
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.modal_overlay.open {
+    display: flex;
+}
+
+.modal_container {
+    position: relative;
+    width: 512px;
+    background-color: #FFFFFF;
+    border: 1px solid #ACADAD1A;
+    border-radius: 48px;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 0 40px rgba(141, 74, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    animation: fadeUp 0.3s ease-out;
+}
+
+.modal_close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    border: none;
+    background-color: #F2F2F2;
+    color: #5A5C5C;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.modal_card_container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    background-color: #FFFDF7;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 30px rgba(141, 74, 0, 0.08);
+    margin-bottom: 8px;
+}
+
+.modal_img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.modal_badge {
+    position: absolute;
+    bottom: -10px;
+    right: -12px;
+    background-color: #FFD15C;
+    color: #5C4900;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    transform: rotate(-6deg);
+}
+
+.modal_title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -1px;
+    color: #2D2F2F;
+    margin: 0;
+}
+
+.modal_text {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    color: #5A5C5C;
+    max-width: 320px;
+    margin: 0;
+}
+
+.modal_discount_container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 24px;
+    background: linear-gradient(90deg, #F5F5F5 0%, #FFF6E0 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.modal_percent {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #8D4A00;
+}
+
+.modal_off {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    color: #5A5C5C;
+}
+
+.modal_code_container {
+    width: 100%;
+    height: 54px;
+    border-radius: 9999px;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #2D2F2F;
+}
+
+.modal_copy_btn {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 9999px;
+    background-color: #8D4A00;
+    color: #FFFFFF;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.modal_copy_btn:hover {
+    background-color: #713A00;
+}
+
+.modal_valid {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #9E9E9E;
+    margin: 0;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes headerAppear {
+    from { opacity: 0; transform: translateY(-25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logoAppear {
+    from { opacity: 0; transform: translateX(-30px); filter: blur(5px); }
+    to { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+
+@keyframes linkAppear {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes buttonAppear {
+    from { opacity: 0; transform: translateX(25px) scale(0.9); }
+    to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroImageAppear {
+    from { opacity: 0; transform: scale(0.92) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: rotate(-6deg) translateY(0); }
+    50% { transform: rotate(-4deg) translateY(-12px); }
+}
+
+@keyframes underline {
+    from { background-size: 0% 8px; }
+    to { background-size: 100% 8px; }
+}
+
+@keyframes pulseBadge {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 138, 43, 0.5); }
+    50% { box-shadow: 0 0 0 8px rgba(255, 138, 43, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+```[cite: 15]
+
+Просто закинь це в `index.html` і `style.css` — все готово. Якщо щось ще треба підправити, кажи.

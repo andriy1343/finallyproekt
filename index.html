@@ -4,13 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SOLARIUM</title>
     <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
@@ -19,16 +14,14 @@
         <div class="header_container">
             <h2 class="header_container--title">SOLARIUM</h2>
             <nav class="header_container--nav">
-                <a href="" class="header_container--nav--link">Trends</a>
-                <a href="" class="header_container--nav--link">Archives</a>
-                <a href="" class="header_container--nav--link">Drops</a>
-                <a href="" class="header_container--nav--link">Community</a>
+                <a href="#trends" class="header_container--nav--link">Trends</a>
+                <a href="#archives" class="header_container--nav--link">Archives</a>
+                <a href="#drops" class="header_container--nav--link">Drops</a>
+                <a href="#community" class="header_container--nav--link">Community</a>
             </nav>
-            <button class="header_container--btn">Join the Club</button>
+            <button class="header_container--btn" type="button" onclick="openModal()">Join the Club</button>
         </div>
     </header>
-
-
 
     <main>
         <section class="streetwear">
@@ -47,17 +40,17 @@
                     </p>
 
                     <div class="streetwear_container--info--buttons">
-                        <button class="streetwear_container--info--buttons--explore">Explore Archive
+                        <button class="streetwear_container--info--buttons--explore" type="button" onclick="document.getElementById('archives').scrollIntoView()">Explore Archive
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16L6.575 14.6L12.175 9V9"
                                     fill="#FFF0E7" />
                             </svg>
                         </button>
-                        <button class="streetwear_container--info--buttons--veil">View Drops</button>
+                        <button class="streetwear_container--info--buttons--veil" type="button" onclick="document.getElementById('drops').scrollIntoView()">View Drops</button>
                     </div>
-
                 </div>
+
                 <div class="streetwear_container--image">
                     <img src="img/Streetwear-clothes.png" alt="Streetwear-clothes"
                         class="streetwear_container--image--first">
@@ -65,29 +58,25 @@
                         class="streetwear_container--image--second">
                 </div>
             </div>
-
         </section>
 
-
-        <section class="hit">
+        <section class="hit reveal" id="trends">
             <div class="hit_container">
-                <h2 class="new_hit_info_title">What is Y2K and why
-                    is it a hit again?</h2>
+                <h2 class="new_hit_info_title">What is Y2K and why is it a hit again?</h2>
 
-                <p class="fashion_info_title">
-                    Fashion is cyclical, and today Gen Z is setting the new
-                    rules. We mix vintage vibes with modern aesthetics. The
-                    main rule of modern streetwear is <span class="highlight">absolute freedom of</span>
-                    <span class="highlight">self-expression.</span>
+                <p class="text">
+                    Fashion is cyclical, and today Gen Z is setting the new rules.
+                    We mix vintage vibes with modern aesthetics.
+                    The main rule of modern streetwear is
+                    <span class="highlight">
+                        absolute freedom of self-expression.
+                    </span>
                 </p>
 
-                <p class="easiest_info_title">"Clothing is the easiest bbbbay to tell a storyabout yourself without
-                    saying a single<br>word."</p>
+                <p class="easiest_info_title">"Clothing is the easiest way to tell a story about yourself without saying a single word."</p>
                 <div class="container_fit">
                     <p>Layering in everything</p>
-
                     <p>Oversized fit</p>
-
                     <p>Bright and acid color accents</p>
                 </div>
             </div>
@@ -96,93 +85,194 @@
             </div>
         </section>
 
+        <section class="clothes reveal" id="drops">
+            <div class="clothes_container">
+                <div class="clothes_header">
+                    <div>
+                        <h3 class="gallery">Trend Gallery</h3>
+                        <p class="curated">The essential artifacts of modern urban expression. Curated for the bold.</p>
+                    </div>
+                    <p class="clothes--info--title">
+                        View All Trends
+                        <svg class="svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16L6.575 14.6L12.175 9V9"
+                                fill="#8D4A00" />
+                        </svg>
+                    </p>
+                </div>
 
-
-
-
-        <section class="clothes">
-    <div class="clothes_container">
-        <div class="clothes_header">
-            <div>
-                <h3 class="gallery">Trend Gallery</h3>
-                <p class="curated">The essential artifacts of modern urban expression. Curated for the bold.</p>
-            </div>
-            <p class="clothes--info--title">
-                View All Trends
-                <svg class="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16L6.575 14.6L12.175 9V9" fill="#8D4A00" />
-                </svg>
-            </p>
-        </div>
-        <div class="clothes_gallery">
-            <img class="clothes--image" src="img/cool_trousers.png" alt="trousers">
-            <div class="clothes_right">
-                <img class="clothes--image--boot" src="img/brown_boot.png" alt="boot">
-                <div class="clothes_bottom">
-                    <img class="clothes--image--hoodi" src="img/Hoodies (1).png" alt="hoodi">
-                    <img class="clothes--image--laptop" src="img/Laptop.png" alt="laptop">
+                <div class="clothes_gallery">
+                    <img class="clothes--image" src="img/cool_trousers.png" alt="trousers">
+                    <div class="clothes_right">
+                        <img class="clothes--image--boot" src="img/brown_boot.png" alt="boot">
+                        <div class="clothes_bottom">
+                            <img class="clothes--image--hoodi" src="img/Hoodies (1).png" alt="hoodi">
+                            <img class="clothes--image--laptop" src="img/Laptop.png" alt="laptop">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
+        <section class="evolution reveal" id="archives">
+            <div class="evolution_container">
+                <h2 class="evolution_title">Evolution of Style</h2>
+                <p class="evolution_subtitle">How the urban landscape transformed from the analog 90s to the digital future.</p>
 
+                <div class="evolution_table_wrap">
+                    <table class="evolution_table">
+                        <thead>
+                            <tr>
+                                <th>ERA</th>
+                                <th>KEY SILHOUETTE</th>
+                                <th>VIBE</th>
+                                <th>SOLARIUM STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="era_name">Late 90s</td>
+                                <td>Wide-leg cargo & utility vests</td>
+                                <td>Industrial minimalism</td>
+                                <td><span class="status status--archived">ARCHIVED</span></td>
+                            </tr>
+                            <tr class="row--active">
+                                <td class="era_name">Y2K Era</td>
+                                <td>Metallic fabrics & chunky tech</td>
+                                <td>Cyber-optimism</td>
+                                <td><span class="status status--trending">TRENDING NOW</span></td>
+                            </tr>
+                            <tr>
+                                <td class="era_name">Late 2010s</td>
+                                <td>Slim technical joggers</td>
+                                <td>Athleisure dominance</td>
+                                <td><span class="status status--vaulted">VAULTED</span></td>
+                            </tr>
+                            <tr>
+                                <td class="era_name">2024+</td>
+                                <td>Extreme baggy & organic textures</td>
+                                <td>Neo-solarium warmth</td>
+                                <td><span class="status status--emerging">EMERGING</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
+        <section class="movement reveal" id="community">
+            <div class="movement_container">
+                <div class="movement_left_container">
+                    <h2 class="movement_title">Join the Movement</h2>
+                    <p class="movement_text">Sign up to receive early access to archive drops, community lookbooks, and sun-drenched style guides.</p>
+                    <div class="movement_members_container">
+                        <div class="movement_avatars_container">
+                            <img class="movement_avatar" src="img/bob_create.png" alt="member">
+                            <img class="movement_avatar" src="img/detective.png" alt="member">
+                            <img class="movement_avatar" src="img/yellow.png" alt="member">
+                        </div>
+                        <span class="movement_count">+2,400 members</span>
+                    </div>
+                </div>
 
-<section class="evolution">
-    <div class="evolution_container">
-        <h2 class="evolution_title">Evolution of Style</h2>
-        <p class="evolution_subtitle">How the urban landscape transformed from the
-             analog 90s to the digital future.</p>
+                <form class="movement_right_container">
+                    <label class="movement_label" for="name">FULL NAME</label>
+                    <input class="movement_input" id="name" type="text" placeholder="Alex Rivera">
 
-        <div class="evolution_table_wrap">
-            <table class="evolution_table">
-                <thead>
-                    <tr>
-                        <th>ERA</th>
-                        <th>KEY SILHOUETTE</th>
-                        <th>VIBE</th>
-                        <th>SOLARIUM STATUS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="era_name">Late 90s</td>
-                        <td>Wide-leg cargo  utility vests</td>
-                        <td>Industrial minimalism</td>
-                        <td><span class="status status--archived">ARCHIVED</span></td>
-                    </tr>
-                    <tr class="row--active">
-                        <td class="era_name">Y2K Era</td>
-                        <td>Metallic fabrics  chunky tech</td>
-                        <td>Cyber-optimism</td>
-                        <td><span class="status status--trending">TRENDING NOW</span></td>
-                    </tr>
-                    <tr>
-                        <td class="era_name">Late 2010s</td>
-                        <td>Slim technical joggers</td>
-                        <td>Athleisure dominance</td>
-                        <td><span class="status status--vaulted">VAULTED</span></td>
-                    </tr>
-                    <tr>
-                        <td class="era_name">2024+</td>
-                        <td>Extreme baggy  organic textures</td>
-                        <td>Neo-solarium warmth</td>
-                        <td><span class="status status--emerging">EMERGING</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
+                    <label class="movement_label" for="email">EMAIL ADDRESS</label>
+                    <input class="movement_input" id="email" type="email" placeholder="alex@solarium.com">
 
+                    <button class="movement_btn" type="button" onclick="sendForm()">AUTHENTICATE PROFILE</button>
 
-
-
-
+                    <p class="movement_terms">BY JOINING, YOU AGREE TO OUR CURATOR TERMS AND LIFESTYLE GUIDELINES.</p>
+                </form>
+            </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer_container">
+            <p class="footer_logo">SOLARIUM</p>
+
+            <div class="footer_links_container">
+                <a class="footer_link" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+                <a class="footer_link" href="https://x.com/" target="_blank" rel="noopener">Twitter</a>
+                <a class="footer_link" href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+                <a class="footer_link" href="https://discord.com/" target="_blank" rel="noopener">Discord</a>
+            </div>
+
+            <p class="footer_copy">© 2024 SOLARIUM ARCHIVE. CURATED IN LIGHT.</p>
+        </div>
+    </footer>
+
+    <div class="modal_overlay" id="mainModal">
+        <div class="modal_container">
+            <button class="modal_close" type="button" onclick="closeModal()">✕</button>
+
+            <div class="modal_card_container">
+                <img class="modal_img" src="img/color_boot.png" alt="Secret Drop">
+                <span class="modal_badge">LIMITED</span>
+            </div>
+
+            <h3 class="modal_title">SECRET DROPS</h3>
+            <p class="modal_text">You've unlocked a sun-drenched exclusive reward for the new season collection.</p>
+
+            <div class="modal_discount_container">
+                <span class="modal_percent">-15%</span>
+                <span class="modal_off">OFF YOUR NEXT ORDER</span>
+            </div>
+
+            <div class="modal_code_container">
+                <span id="promoCode">GOITEENS-STYLE</span>
+            </div>
+
+            <button class="modal_copy_btn" type="button" onclick="copyPromo()">Copy Code</button>
+
+            <p class="modal_valid">VALID FOR THE NEXT 24 HOURS ONLY</p>
+        </div>
+    </div>
+
+    <script>
+        function sendForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            if (!name || !email) {
+                alert("Заповни ім'я та пошту");
+                return;
+            }
+
+            alert("Вислано!");
+        }
+
+        function openModal() {
+            document.getElementById("mainModal").classList.add("open");
+        }
+
+        function closeModal() {
+            document.getElementById("mainModal").classList.remove("open");
+        }
+
+        function copyPromo() {
+            const code = document.getElementById("promoCode").innerText;
+            navigator.clipboard.writeText(code);
+            alert("Промокод скопійовано: " + code);
+        }
+
+        const reveals = document.querySelectorAll(".reveal");
+        function revealOnScroll() {
+            reveals.forEach((el) => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", revealOnScroll);
+        revealOnScroll();
+    </script>
+
 </body>
 
 </html>
